@@ -22,7 +22,7 @@ export const GameScreen: React.FC<GameScreenProps> = ({ onExit }) => {
     }
   }, [lives, reduceLives, endGame]);
 
-  const { timeLeft, startTimer } = useTimer(gameConfig?.timeLimit || 0, handleGameOver);
+  const { timeLeft } = useTimer(gameConfig?.timeLimit || 0, handleGameOver);
 
   const togglePause = () => setIsPaused(prev => !prev);
 
@@ -68,4 +68,4 @@ export const GameScreen: React.FC<GameScreenProps> = ({ onExit }) => {
       />
     </div>
   );
-};
+}

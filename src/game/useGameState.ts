@@ -3,7 +3,7 @@ import { useGameStore } from '../store/gameStore';
 
 export const useGameState = () => {
   const [isPaused, setIsPaused] = useState(false);
-  const { gameConfig, addScore } = useGameStore();
+  const { gameConfig } = useGameStore();
 
   const togglePause = useCallback(() => {
     setIsPaused(prev => !prev);

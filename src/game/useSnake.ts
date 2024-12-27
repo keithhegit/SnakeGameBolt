@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Point, Direction, Snake } from '../types/snake';
+import { Direction, Snake } from '../types/snake';
 import { BASE_GRID_SIZE, INITIAL_SNAKE_LENGTH } from '../config/constants';
 
 const INITIAL_SNAKE: Snake = {

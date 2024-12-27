@@ -11,6 +11,42 @@ interface DrawGameProps {
   isDark: boolean;
 }
 
+const drawSnake = (ctx: CanvasRenderingContext2D, snake: Snake, cellSize: number) => {
+  ctx.fillStyle = '#3498DB';
+  snake.body.forEach(({ x, y }, index) => {
+    const size = index === 0 ? cellSize - 2 : cellSize - 4;
+    ctx.fillRect(
+      x * cellSize + (cellSize - size) / 2,
+      y * cellSize + (cellSize - size) / 2,
+      size,
+      size
+    );
+  });
+};
+
+const drawFood = (ctx: CanvasRenderingContext2D, food: Food, cellSize: number) => {
+  ctx.fillStyle = '#E74C3C';
+  ctx.beginPath();
+  ctx.arc(
+    food.position.x * cellSize + cellSize / 2,
+    food.position.y * cellSize + cellSize / 2,
+    cellSize / 3,
+    0,
+    Math.PI * 2
+  );
+  ctx.fill();
+};
+
+const drawObstacle = (ctx: CanvasRenderingContext2D, obstacle: Obstacle, cellSize: number) => {
+  ctx.fillStyle = '#95A5A6';
+  ctx.fillRect(
+    obstacle.position.x * cellSize + 2,
+    obstacle.position.y * cellSize + 2,
+    cellSize - 4,
+    cellSize - 4
+  );
+};
+
 export const drawGame = (ctx: CanvasRenderingContext2D, props: DrawGameProps) => {
   const { gridSize, cellSize, snake, food, obstacles, isDark } = props;
 
