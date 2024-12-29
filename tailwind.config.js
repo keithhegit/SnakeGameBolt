@@ -5,17 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      gridTemplateColumns: {
-        '20': 'repeat(20, minmax(0, 1fr))',
-      },
-      gridTemplateRows: {
-        '20': 'repeat(20, minmax(0, 1fr))',
-      },
-      animation: {
-        'snake-move': 'move 100ms linear',
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
